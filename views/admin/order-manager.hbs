@@ -1,0 +1,55 @@
+<!-- Page Content -->
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row bg-title">
+      <div class="col-lg-12">
+        <h4 class="page-title">Order Manager</h4>
+        <div class="row">
+
+        </div>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- row -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="white-box">
+          <div class="table-responsive">
+            <table class="table" id="myTable">
+              <thead>
+                <tr>
+
+                  <th class="text-center">DATE</th>
+                  <th class="text-center">CUSTOMER</th>
+                  {{!-- <th class="text-center">DATE</th> --}}
+                  <th class="text-center">PRICE</th>
+                  <th class="text-center">PAYMENT_METHOD</th>
+                  <th class="text-center">DETAILS</th>
+
+                  <th class="text-center">STATUS</th>
+                  <th class="text-center">MANAGE_ORDER</th>
+
+                </tr>
+              </thead>
+           <tbody>
+
+{{#each orders}}
+    <tr>
+<td>{{this.date}}</td>
+<td>{{this.deliveryDetails.Name}}</td>
+<td>{{this.totalAmount}}</td>
+<td>{{this.paymentMethod}}</td>
+<td>{{this.deliveryDetails.mobile}}</td>
+<td>{{this.status}}</td>
+
+
+<td>
+
+    <a href="/view-order-products/{{this._id}}" class="btn btn-primary">View Products</a>
+</td>
+
+
+    </tr>
+
+    {{/each}}
+</tbody>
